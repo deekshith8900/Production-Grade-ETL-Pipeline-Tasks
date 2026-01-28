@@ -13,6 +13,8 @@ x-airflow-common: &airflow-common
     AWS_SECRET_ACCESS_KEY: minioadmin
     AWS_DEFAULT_REGION: us-east-1
     AIRFLOW_CONN_AWS_DEFAULT: aws://minioadmin:minioadmin@?region_name=us-east-1&endpoint_url=http%3A%2F%2Fminio%3A9000
+  env_file:
+    - .env
   volumes:
     - ./dags:/opt/airflow/dags
     - ./logs:/opt/airflow/logs
