@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.env
+venv/
+
+# Airflow
+logs/
+airflow.cfg
+webserver_config.py
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+
+# Docker
+docker-context-files/
