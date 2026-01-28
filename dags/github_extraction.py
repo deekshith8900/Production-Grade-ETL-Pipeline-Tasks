@@ -27,3 +27,10 @@ with DAG(
         task_id='extract_github_issues',
         bash_command='python /opt/airflow/scripts/extract_github.py --date {{ ds }}',
     )
+    
+    load_task = BashOperator(
+        task_id='load_github_issues',
+        bash_command='python /opt/airflow/scripts/load_raw.py --date {{ ds }}',
+    )
+    
+    extract_task >> load_task
