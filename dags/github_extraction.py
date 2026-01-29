@@ -33,4 +33,9 @@ with DAG(
         bash_command='python /opt/airflow/scripts/load_raw.py --date {{ ds }}',
     )
     
-    extract_task >> load_task
+    transform_task = BashOperator(
+        task_id='transform_github_issues',
+        bash_command='python /opt/airflow/scripts/transform.py --date {{ ds }}',
+    )
+    
+    extract_task >> load_task >> transform_task
