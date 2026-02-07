@@ -114,8 +114,8 @@ These practices align with **production data engineering standards**.
 
 3. **Start infrastructure**
    ```bash
-  docker compose up -d --build
-   
+   docker compose up -d --build
+  
 
 4. **Access UIs**
 
