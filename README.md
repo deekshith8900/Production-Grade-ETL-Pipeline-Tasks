@@ -108,11 +108,16 @@ These practices align with **production data engineering standards**.
    cd Production-Grade-ETL-Pipeline-Tasks
 
 
-GITHUB_TOKEN=your_token_here
+2. **Configure environment variables**
+   ```bash
+   GITHUB_TOKEN=your_token_here
 
-Start infrastructure : docker compose up -d --build
+3. **Start infrastructure**
+   ```bash
+  docker compose up -d --build
+   
 
-Access UIs
+4. **Access UIs**
 
 Airflow: http://localhost:8080
  (admin / admin)
@@ -121,7 +126,10 @@ MinIO: http://localhost:9001
  (minioadmin / minioadmin)
 
 
-🧠 Key Design Decisions
+
+
+
+**🧠 Key Design Decisions**
 
 Object storage decouples ingestion from transformation for scalability and fault tolerance.
 
@@ -131,7 +139,7 @@ Apache Airflow provides scheduling, retries, observability, and dependency manag
 
 Idempotent pipelines ensure safe reprocessing and production reliability.
 
-🔮 Future Improvements
+**🔮 Future Improvements**
 
 Migrate analytics warehouse to Amazon Redshift
 
